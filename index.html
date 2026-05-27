@@ -1662,7 +1662,7 @@ var FF_PACKAGES = {
   1500: { facturas: 1500, desc: 'Paquete 1,500 facturas extra' }
 };
 var FF_PRICE_MXN = 10; // $10 MXN por factura adicional
-var FF_BASE_FACTURAS = 300; // 300 fotofacturas incluidas en precio base (ocultas)
+var FF_BASE_FACTURAS = 200; // 200 fotofacturas incluidas en precio base (ocultas)
 
 var selectedFF = 0;
 var customFF   = 0; // FotoFacturas ingresadas manualmente por el cliente
@@ -1844,8 +1844,8 @@ function recalc() {
   var valeraAno = valeraActivo ? (gastoMes * (comValera/100) * 12) : 0;
   var valeraAnoUSD = valeraAno / tdc;
 
-  // Savings — capturista: 500 FF del plan + addon si el cliente lo agrega
-  var facturasTotal = 500 + ffAddonFacturas;
+  // Savings — capturista: 200 FF del plan + addon si el cliente lo agrega
+  var facturasTotal = 200 + ffAddonFacturas;
   // Costo por hora del capturista
   var costoHora = sueldoCap / horasMes;
   // Horas que tomaría capturarlas manualmente
