@@ -569,6 +569,141 @@ lang="es">
       .tooltip-text { left: auto; right: 0; transform: none; }
       .tooltip-text::after { left: auto; right: 10px; }
     }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE MOBILE — Comprehensive overrides
+    ══════════════════════════════════════════════ */
+
+    html, body { max-width: 100%; overflow-x: hidden; }
+    *, *::before, *::after { max-width: 100%; }
+    img, svg { max-width: 100%; height: auto; }
+
+    /* ── NAV ── */
+    @media(max-width:768px){
+      nav { padding: 10px 16px; }
+      .nav-logo > span[style*="width:1px"] { display: none !important; }
+      .nav-logo > a:not([href*="tryjeeves"]) { display: none !important; }
+    }
+    @media(max-width:380px){
+      .nav-wordmark { font-size: 14px; }
+      .nav-pill { display: none; }
+    }
+
+    /* ── HERO CARD — sin efecto 3D en touch ── */
+    @media(max-width:768px){
+      .hero-card { transform: none !important; }
+      .hero-card:hover { transform: none !important; }
+    }
+
+    /* ── HERO ── */
+    @media(max-width:480px){
+      .hero { padding: 90px 14px 56px; }
+      .hero-stats { gap: 8px; }
+      .hstat { padding: 12px 14px; }
+      .hstat-num { font-size: 24px; }
+    }
+    @media(max-width:380px){
+      .hero h1 { font-size: clamp(32px, 9vw, 46px); line-height: 1; }
+      .hero-sub { font-size: 14px; margin-bottom: 32px; }
+    }
+
+    /* ── SECTIONS ── */
+    @media(max-width:768px){
+      .section { padding: 64px 16px; }
+      .section-inner { padding: 0; }
+      .section-sub { margin-bottom: 36px; }
+    }
+    @media(max-width:480px){
+      .section { padding: 48px 14px; }
+      .section-h { letter-spacing: -0.01em; }
+    }
+
+    /* ── CALCULATOR ── */
+    @media(max-width:768px){
+      .calc-header { padding: 20px 18px; flex-direction: column; align-items: flex-start; }
+      .tdc-wrap { align-self: stretch; justify-content: space-between; }
+      .calc-left, .calc-right { padding: 24px 18px; }
+    }
+    @media(max-width:480px){
+      .calc-header { padding: 16px 14px; }
+      .tdc-input { width: 90px; font-size: 17px; }
+      .calc-left, .calc-right { padding: 20px 14px; }
+      .tier-options,
+      div[style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2,1fr) !important; }
+    }
+    @media(max-width:360px){
+      .tier-options,
+      div[style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr 1fr !important; }
+    }
+
+    /* ── RESULT ROWS ── */
+    @media(max-width:480px){
+      .result-row-top { flex-direction: column; gap: 6px; }
+      .result-amounts { text-align: left; }
+      .result-mxn { font-size: 16px; }
+      .neto-main { font-size: clamp(26px, 7vw, 40px); }
+      .result-total, .result-neto { padding: 14px 16px; }
+    }
+
+    /* ── BREAKDOWN TABLE ── */
+    @media(max-width:600px){
+      .bt-row { gap: 4px; font-size: 12px; padding: 10px 12px; }
+      .bt-row > * { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+    }
+    @media(max-width:400px){
+      .bt-row { grid-template-columns: 1fr !important; gap: 2px; }
+      .bt-val { text-align: left; font-size: 11px; }
+    }
+
+    /* ── TIER CARDS ── */
+    @media(max-width:600px){
+      .tier-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media(max-width:380px){
+      .tier-grid { grid-template-columns: 1fr !important; }
+      .tier-card { padding: 20px 16px; }
+    }
+
+    /* ── FF PACKAGES ── */
+    @media(max-width:480px){
+      .ff-grid { grid-template-columns: 1fr !important; }
+      .ff-card { padding: 18px 16px; }
+    }
+
+    /* ── INLINE GRIDS/FLEX — colapsar en móvil ── */
+    @media(max-width:640px){
+      div[style*="grid-template-columns:1fr 1fr"],
+      div[style*="grid-template-columns: 1fr 1fr"],
+      div[style*="grid-template-columns:repeat(auto-fit"] { grid-template-columns: 1fr !important; }
+      .section-inner > div[style*="display:flex"],
+      .section-inner div[style*="display:flex;gap"] { flex-wrap: wrap !important; }
+    }
+
+    /* ── CTA / EXEC ── */
+    @media(max-width:480px){
+      .cta-section { padding: 56px 14px; }
+      #exec-grid { flex-direction: column; align-items: center; }
+      .exec-card { max-width: 100% !important; width: 100% !important; }
+    }
+
+    /* ── SCROLL HORIZONTAL en tablas muy chicas ── */
+    @media(max-width:360px){
+      .breakdown-table { overflow-x: auto; }
+    }
+
+    /* ── TOUCH TARGETS ── */
+    @media(max-width:768px){
+      .tier-opt { min-height: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .ff-card, .tier-card { -webkit-tap-highlight-color: transparent; }
+      .cta-btn { min-height: 52px; }
+    }
+
+    /* ── INPUTS ── */
+    @media(max-width:480px){
+      .input-row { flex-wrap: wrap; }
+      .calc-input { font-size: 16px; padding: 11px 12px; }
+      .input-group { margin-bottom: 16px; }
+    }
   </style>
 </head>
 <body>
@@ -759,7 +894,7 @@ lang="es">
               <span class="tooltip-text">Únicamente en Jeeves Pay / Transferencias, Pago a Proveedores</span>
             </span>
           </div>
-          <div style="font-size:13px;color:var(--text-secondary);line-height:1.6;">Solo <span style="color:var(--gold);font-weight:700;">1–3.5%</span> al activar la línea — se cobra una sola vez, a diferencia de los bancos tradicionales.</div>
+          <div style="font-size:13px;color:var(--text-secondary);line-height:1.6;">Solo <span style="color:var(--gold);font-weight:700;">3.5%</span> al activar la línea — se cobra una sola vez, a diferencia de los bancos tradicionales.</div>
         </div>
       </div>
 
@@ -1284,6 +1419,30 @@ lang="es">
             <div class="input-hint">MXN / mes · $10 por factura adicional · o elige un paquete arriba</div>
           </div>
 
+          <!-- Esquema de Pagos -->
+          <div class="input-group">
+            <div class="calc-section-label">💳 Esquema de Pagos</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px;">
+              <div class="tier-opt" id="pago_anual" onclick="selectPayment('anual')" style="padding:14px 10px;position:relative;overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);border-radius:999px 999px 0 0;opacity:0;" id="pago_anual_line"></div>
+                <div class="tier-opt-label" style="font-size:9px;margin-bottom:3px;">Pago Anual</div>
+                <div class="tier-opt-price" style="font-size:18px;font-weight:900;color:var(--gold);">15%</div>
+                <div style="font-size:8px;color:var(--text-muted);margin-top:2px;">descuento</div>
+              </div>
+              <div class="tier-opt" id="pago_q" onclick="selectPayment('q')" style="padding:14px 10px;">
+                <div class="tier-opt-label" style="font-size:9px;margin-bottom:3px;">2 Parcialidades</div>
+                <div class="tier-opt-price" style="font-size:18px;font-weight:900;color:var(--pacific);">10%</div>
+                <div style="font-size:8px;color:var(--text-muted);margin-top:2px;">descuento</div>
+              </div>
+              <div class="tier-opt" id="pago_3p" onclick="selectPayment('3p')" style="padding:14px 10px;">
+                <div class="tier-opt-label" style="font-size:9px;margin-bottom:3px;">Mensual</div>
+                <div class="tier-opt-price" style="font-size:18px;font-weight:900;color:var(--green);">0%</div>
+                <div style="font-size:8px;color:var(--text-muted);margin-top:2px;">descuento</div>
+              </div>
+            </div>
+            <div id="pago_calc_hint" class="input-hint">Selecciona un esquema para aplicar el descuento al total</div>
+          </div>
+
           <!-- Gasto tarjetas — Cashback (1) -->
           <div style="border-top:1px solid var(--black-4);padding-top:22px;margin-top:4px;">
             <div class="calc-section-label">💳 Gasto Corporativo Mensual (Cashback)</div>
@@ -1421,9 +1580,36 @@ lang="es">
           </div>
 
           <!-- Total investmnet -->
+          <!-- Subtotal row — visible solo con descuento activo -->
+          <div class="result-row" id="res_subtotal_row" style="display:none;">
+            <div class="result-row-top">
+              <div>
+                <div class="result-name" style="color:var(--text-secondary);font-weight:500;">Subtotal (antes de descuento)</div>
+              </div>
+              <div class="result-amounts">
+                <div class="result-mxn" id="res_subtotal_mxn" style="color:var(--text-secondary);font-size:13px;">—</div>
+                <div class="result-usd" id="res_subtotal_usd">—</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Descuento por esquema -->
+          <div class="result-row" id="res_pago_row" style="display:none;background:rgba(74,188,160,0.04);border-color:rgba(74,188,160,0.18);">
+            <div class="result-row-top">
+              <div>
+                <div class="result-name">🎯 Descuento Esquema de Pago</div>
+                <div class="result-sub" id="res_pago_label_val">—</div>
+              </div>
+              <div class="result-amounts">
+                <div class="result-mxn green" id="res_pago_mxn">—</div>
+                <div class="result-usd" id="res_pago_usd">—</div>
+              </div>
+            </div>
+          </div>
+
           <div class="result-total">
             <div class="result-row-top">
-              <div style="font-size:13px;font-weight:700;">💳 Total Inversión Plataforma</div>
+              <div style="font-size:13px;font-weight:700;" id="res_total_label">💳 Total Inversión Plataforma</div>
               <div class="result-amounts">
                 <div class="result-mxn" id="res_total_mxn" style="font-size:22px;">$0</div>
                 <div class="result-usd" id="res_total_usd">≈ USD 0 / año</div>
@@ -1668,6 +1854,42 @@ var selectedFF = 0;
 var customFF   = 0; // FotoFacturas ingresadas manualmente por el cliente
 
 // ──────────────────────────────────
+//  PAYMENT SCHEME SELECTION
+// ──────────────────────────────────
+var selectedPaymentDiscount = 0;
+
+function resetPayment() {
+  selectedPaymentDiscount = 0;
+  ['pago_anual','pago_q','pago_3p'].forEach(function(id) {
+    var el = document.getElementById(id); if (el) el.classList.remove('selected');
+  });
+  var hint = document.getElementById('pago_calc_hint');
+  if (hint) { hint.textContent = 'Selecciona un esquema para aplicar el descuento al total'; hint.style.color = ''; }
+}
+
+var PAYMENT_SCHEMES = {
+  anual: { disc:15, label:'Pago Anual · 15% OFF',      color:'var(--gold)'    },
+  q:     { disc:10, label:'2 Parcialidades · 10% OFF', color:'var(--pacific)' },
+  '3p':  { disc:0,  label:'Mensual · Sin descuento',   color:'var(--green)'   }
+};
+
+function selectPayment(key) {
+  var scheme = PAYMENT_SCHEMES[key];
+  if (!scheme) return;
+  if (selectedPaymentDiscount === scheme.disc && key !== '3p') { resetPayment(); recalc(); return; }
+  selectedPaymentDiscount = scheme.disc;
+  ['pago_anual','pago_q','pago_3p'].forEach(function(id) {
+    var el = document.getElementById(id); if (el) el.classList.remove('selected');
+  });
+  var map = { anual:'pago_anual', q:'pago_q', '3p':'pago_3p' };
+  var btn = document.getElementById(map[key]);
+  if (btn) btn.classList.add('selected');
+  var hint = document.getElementById('pago_calc_hint');
+  if (hint) { hint.textContent = '✓ ' + scheme.label + ' seleccionado'; hint.style.color = scheme.color; }
+  recalc();
+}
+
+// ──────────────────────────────────
 //  FORMATTERS
 // ──────────────────────────────────
 function fmxn(n) {
@@ -1828,9 +2050,15 @@ function recalc() {
   var ffAnoUSD = ffAddonAnoUSD;
 
   // Total investment
-  var totalMes    = platMes + ffMes;
-  var totalAno    = platAno + ffAno;
-  var totalAnoUSD = platAnoUSD + ffAnoUSD;
+  var totalMes        = platMes + ffMes;
+  var totalAnoBase    = platAno + ffAno;
+  var totalAnoUSDBase = platAnoUSD + ffAnoUSD;
+
+  // Aplicar descuento por esquema de pago
+  var pagoDisc = selectedPaymentDiscount || 0;
+  var pagoMult = 1 - pagoDisc / 100;
+  var totalAno    = totalAnoBase    * pagoMult;
+  var totalAnoUSD = totalAnoUSDBase * pagoMult;
 
   // Savings — cashback 1% × 6 months
   var cbMXN = gastoMes * 0.01 * 6;
@@ -1906,6 +2134,23 @@ function recalc() {
 
   setText('res_total_mxn', fmxn(totalAno) + ' MXN/año');
   setText('res_total_usd', '≈ ' + fusd(totalAnoUSD) + ' / año');
+
+  // Filas de descuento por esquema de pago
+  if (pagoDisc > 0) {
+    show('res_subtotal_row');
+    setText('res_subtotal_mxn', fmxn(totalAnoBase) + ' MXN/año');
+    setText('res_subtotal_usd', '≈ ' + fusd(totalAnoUSDBase) + ' / año');
+    show('res_pago_row');
+    var pagoLabel = pagoDisc === 15 ? 'Pago Anual' : '2 Parcialidades';
+    setText('res_pago_label_val', pagoDisc + '% de descuento · ' + pagoLabel);
+    setText('res_pago_mxn', '− ' + fmxn(totalAnoBase - totalAno) + ' MXN/año');
+    setText('res_pago_usd', '− ' + fusd(totalAnoUSDBase - totalAnoUSD) + ' / año');
+    setText('res_total_label', '💳 Total con Descuento (' + pagoDisc + '% OFF)');
+  } else {
+    hide('res_subtotal_row');
+    hide('res_pago_row');
+    setText('res_total_label', '💳 Total Inversión Plataforma');
+  }
 
   // Cashback
   setText('res_cb_mxn', fmxn(cbMXN) + ' MXN');
